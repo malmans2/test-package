@@ -69,6 +69,7 @@ jobs:
   docs-build:
     name: Build Documentation
     runs-on: ubuntu-latest
+    if: 'false' # Enable/disable GitHub Pages deployment
     steps:
     - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
       with:
@@ -96,7 +97,6 @@ jobs:
   docs-deploy:
     name: Deploy Documentation
     needs: docs-build
-    if: 'false' # Enable/disable GitHub Pages deployment
     runs-on: ubuntu-latest
     permissions:
       pages: write
